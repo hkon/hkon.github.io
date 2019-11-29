@@ -32,12 +32,15 @@ body {
   align-items: flex-start;
   flex-direction: column;
 }
+
 .info .title {
   font-size: 8rem;
 }
+
 .info .date {
   font-size: 5rem;
 }
+
 .info .tagline {
   margin-top: 2rem;
   font-size: 3rem;
@@ -50,6 +53,7 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
 .buttons .button {
   -webkit-appearance: none;
   font-size: 2rem;
@@ -57,12 +61,21 @@ body {
   border: 4px solid #000;
   font-family: "Futura";
   transition: all 0.4s ease;
+  -webkit-box-shadow: 17px 17px 0px 5px #da3390;
+  -moz-box-shadow: 17px 17px 0px 5px #da3390;
+  box-shadow: 17px 17px 0px 5px #da3390;
 }
+
 .buttons .button:hover {
-  background-color: #61DABF;
+  background-color: #da3390;
+  color: #fff;
   cursor: pointer;
   transform: translate(20px, 10px);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
+
 .buttons .signup {
   margin-top: 2rem;
 }
