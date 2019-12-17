@@ -4,16 +4,15 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url("bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
 }
 
 .container {
-  border: solid 1rem;
-  border-image: conic-gradient(#40e0d0, #ff8c00, #ff0980, #40e0d0);
-  border-image-slice: 1;
-  width: 100%;
-  height: 100vh;
   box-sizing: border-box;
-  background: #f2f2f2;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +22,7 @@ body {
 .info {
   font-family: "Futura";
   background: #FFFFFF;
-  border: 0.4rem solid #000000;
+  border: 0.5rem solid #000000;
   width: auto;
   max-width: 60rem;
   height: auto;
@@ -50,8 +49,7 @@ body {
   margin-top: 4rem;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-evenly;
 }
 
 .buttons .button {
@@ -61,21 +59,17 @@ body {
   border: 4px solid #000;
   font-family: "Futura";
   transition: all 0.4s ease;
-  -webkit-box-shadow: 17px 17px 0px 5px #da3390;
-  -moz-box-shadow: 17px 17px 0px 5px #da3390;
-  box-shadow: 17px 17px 0px 5px #da3390;
+  -webkit-box-shadow: 17px 17px 0px 0px #3597F9;
+  -moz-box-shadow: 17px 17px 0px 0px #3597F9;
+  box-shadow: 17px 17px 0px 0px #3597F9;
 }
 
 .buttons .button:hover {
-  background-color: #da3390;
+  background-color: #3597F9;
   color: #fff;
   cursor: pointer;
   transform: translate(20px, 10px);
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
-}
-
-.buttons .signup {
-  margin-top: 2rem;
 }
