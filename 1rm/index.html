@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>💪🏻 1RM Calculator 💪🏻</title>
+    <style>
+        body {
+            padding: 2em;
+            background-color: #FFB8AC;
+            font-family: 'Futura';
+        }
+
+        h1 {
+            font-size: 6em;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input {
+            border: 0;
+            background: #FFB8AC;
+            box-shadow: inset -2px -2px 0 0 #FFD3C9, inset 2px 2px 0 0 #BE7362;
+            border-radius: .5em;
+            -moz-appearance: textfield;
+            font-size: 2em;
+            padding: .2em .3em;
+            text-align: center;
+            max-width: 5em;
+            font-family: 'Futura';
+        }
+        input[name=weight] {
+            margin-bottom: 1em;
+        }
+        label {
+            margin-bottom: .625em;
+        }
+        button {
+            margin-top: 1em;
+            background: #FFB8AC;
+            box-shadow: 2px 2px 0 0 #BE7362, -2px -2px 0 0 #FFD3C9;
+            border-radius: 16px;
+            border: none;
+            padding: .3em .8em;
+            font-family: 'Futura';
+            font-size: 2em;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            transition: box-shadow 500ms;
+        }
+
+        button:hover {
+            box-shadow: inset 2px 2px 0 0 #BE7362, inset -2px -2px 0 0 #FFD3C9;
+            cursor: pointer;
+        }
+
+        .calculations {
+            flex-direction: row;
+            display: flex;
+            justify-content: space-between;
+            max-width: 18em;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .epley-wrapper,
+        .brzycki-wrapper {
+            margin-top: 1em;
+            font-size: 1em;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .epley,
+        .brzycki {
+            display: block;
+            text-align: center;
+            font-size: 1.25em;
+        }
+    </style>
+    <script>
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>🏋️&nbsp;🏋️‍♀️</h1>
+        <label for="weight">Weight</label>
+        <input type="number" name="weight">
+        <label for="weight">Reps (1-10)</label>
+        <input type="number" name="reps" max="10">
+        <button type="submit" name="calculate" onclick="oneRep();">Calculate</button>
+        <div class="calculations">
+            <div class="epley-wrapper">
+                <span class="info">
+                    Epley
+                </span>
+                <span class="epley">
+
+                </span>
+            </div>
+            <div class="brzycki-wrapper">
+                <span class="info">Brzycki</span>
+                <span class="brzycki">
+
+                </span>
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <script>
+        const weightInput = document.querySelector('[name=weight]');
+        const repInput = document.querySelector('[name=reps]');
+        const calculateButton = document.querySelector('[name=calculate');
+        const epleyOutput = document.querySelector('.epley');
+        const brzyckiOutput = document.querySelector('.brzycki');
+        function oneRep() {
+            const weight = weightInput.value;
+            const reps = repInput.value;
+            const epleyFormula = weight * (1 + (reps / 30));
+            const brzyckiForumla = weight * ((36) / (37 - reps));
+            if (reps > 1) {
+                epleyOutput.innerText = epleyFormula.toFixed(2);
+                brzyckiOutput.innerText = brzyckiForumla.toFixed(2);
+            }
+        };
+        calculateButton.addEventListener('click', oneRep);
+    </script>
+</body>
+</html>
